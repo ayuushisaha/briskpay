@@ -13,30 +13,38 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header Section -->
-    <header class="header-bg py-4 md:py-6">
-        <nav class="container mx-auto px-4 flex justify-between items-center">
-            <div class="text-2xl font-extrabold text-gray-800">BRISKPAY</div>
-            <div class="hidden md:flex space-x-8 text-gray-700 font-medium">
-                <a href="#" class="hover:text-blue-600 transition duration-300">Company</a>
-                <a href="#" class="hover:text-blue-600 transition duration-300">Feature</a>
-                <a href="#" class="hover:text-blue-600 transition duration-300">Career</a>
-                <a href="#" class="hover:text-blue-600 transition duration-300">News & Media</a>
-            </div>
-            <div class="flex items-center space-x-4">
-                <span class="text-gray-700 font-medium hidden sm:block">DE</span>
-                <span class="text-gray-700 font-medium hidden sm:block">EN</span>
-                <a href="#" class="px-4 py-2 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition duration-300 text-sm">Sign In</a>
-            </div>
-        </nav>
-    </header>
+    <!-- Hero Section - Now contains the entire header content and hero text -->
+    <!-- Added w-screen and h-screen to make it occupy the whole viewport -->
+    <section class="hero-section-full relative w-screen h-screen">
+        <!-- The image container now takes full width -->
+        <div class="hero-image-container relative w-full h-full animate-fade-in" style="animation-delay: 0.6s;">
+            <img src="images/main.jpg" alt="Group of people using BriskPay" class="w-full h-full object-cover">
+            <div class="hero-content-overlay absolute inset-0 flex flex-col justify-between items-center text-white p-4">
+                <!-- Navigation Content - Moved here from original header -->
+                <nav class="flex justify-between items-center w-full max-w-7xl mx-auto px-4">
+                    <div class="flex items-center">
+                        <div class="text-2xl font-extrabold text-white mr-4">BRISKPAY</div>
+                        <!-- Personal/Business Toggle -->
+                        <div class="toggle-switch flex items-center rounded-full p-1">
+                            <button class="toggle-button active px-4 py-1 rounded-full text-sm font-semibold">Personal</button>
+                            <button class="toggle-button px-4 py-1 rounded-full text-sm font-semibold">Business</button>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex space-x-8 text-white font-medium">
+                        <a href="#" class="hover:text-blue-200 transition duration-300">Company</a>
+                        <a href="#" class="hover:text-blue-200 transition duration-300">Feature</a>
+                        <a href="#" class="hover:text-blue-200 transition duration-300">Career</a>
+                        <a href="#" class="hover:text-blue-200 transition duration-300">News & Media</a>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <span class="text-white font-medium hidden sm:block">DE</span>
+                        <span class="text-white font-medium hidden sm:block">EN</span>
+                        <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-full text-sm font-semibold hover:bg-gray-700 transition duration-300">Sign In</a>
+                    </div>
+                </nav>
 
-    <!-- Hero Section -->
-    <section class="header-bg py-16 md:py-24 text-center">
-        <div class="container mx-auto px-4">
-            <div class="hero-image-container relative mt-12 md:mt-20 animate-fade-in" style="animation-delay: 0.6s;">
-                <img src="images/main.jpg" alt="Group of people using BriskPay" class="w-full h-auto rounded-xl shadow-xl">
-                <div class="hero-content-overlay absolute inset-0 flex flex-col justify-center items-center text-white p-4">
+                <!-- Main Hero Text Content -->
+                <div class="flex flex-col justify-center items-center flex-grow w-full">
                     <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-white animate-fade-in">
                         Seamless Payments, <br> Limitless Possibilities.
                     </h1>
@@ -47,6 +55,8 @@
                         Get the app
                     </button>
                 </div>
+                <!-- Empty div to push content to top and bottom if needed, or remove if flex-grow handles it -->
+                <div></div>
             </div>
         </div>
     </section>
