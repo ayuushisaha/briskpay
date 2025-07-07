@@ -11,16 +11,8 @@ body {
     background: linear-gradient(180deg, #e0f2f7 0%, #ffffff 100%);
 }
 
-/* Card Backgrounds */
-.card-gradient-gray {
-    background: linear-gradient(135deg, #a0a0a0 0%, #c0c0c0 100%);
-}
-.card-gradient-black {
-    background: linear-gradient(135deg, #222222 0%, #444444 100%);
-}
-.card-gradient-blue {
-    background: linear-gradient(135deg, #66b2ff 0%, #99ccff 100%);
-}
+/* Card Backgrounds - These will be applied via inline style for specific textures */
+/* .card-gradient-gray, .card-gradient-black, .card-gradient-blue will not be used directly on carousel items */
 
 /* Animations */
 .animate-fade-in {
@@ -73,32 +65,38 @@ body {
     -ms-overflow-style: none;  /* IE and Edge */
     padding-bottom: 1rem; /* Add some padding for scrollbar if visible */
     justify-content: flex-start; /* Ensure items start from the beginning */
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 .scroll-container::-webkit-scrollbar {
     display: none;
 }
 
-/* Feature Card Styling - Corrected for text wrapping and alignment */
+/* Feature Card Styling */
 .feature-card {
-    flex-shrink: 0; /* Prevent cards from shrinking */
-    width: 280px; /* Fixed width for cards to ensure consistent size */
-    margin-right: 1rem; /* Spacing between cards */
-    white-space: normal; /* Allow text to wrap within the card */
-    word-wrap: break-word; /* Break long words */
-    overflow-wrap: break-word; /* Modern property for word breaking */
-    box-sizing: border-box; /* Include padding and border in the element's total width */
-    text-align: left; /* Ensure text within cards is left-aligned as per original design */
-    height: 300px; /* Added a fixed height to feature cards for consistent appearance */
-    position: relative; /* Ensure relative positioning for absolute children */
-    overflow: hidden; /* Hide overflowing content, especially for the image */
+    flex-shrink: 0;
+    min-width: 280px;
+    max-width: calc(100% - 2rem);
+    margin-right: 1rem;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+    text-align: left;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
 }
 @media (min-width: 768px) {
     .scroll-container {
-        justify-content: center; /* Center the cards on desktop */
+        justify-content: center;
+        padding-left: 0;
+        padding-right: 0;
     }
     .feature-card {
-        width: 300px; /* Slightly larger fixed width for desktop if desired */
-        max-width: 300px; /* Ensure consistency with fixed width */
+        width: 300px;
+        max-width: 300px;
+        margin-right: 1rem;
     }
 }
 
@@ -111,10 +109,10 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribute space between top (logo) and bottom (text) */
-    padding: 1.5rem; /* Padding inside the overlay */
-    color: white; /* Text color */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
+    justify-content: space-between;
+    padding: 1.5rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 /* Country Listing */
@@ -124,6 +122,7 @@ body {
     justify-content: space-between;
     padding: 0.75rem 0;
     border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
 }
 .country-row:last-child {
     border-bottom: none;
@@ -133,12 +132,15 @@ body {
     align-items: center;
     gap: 0.75rem;
     flex-wrap: wrap;
+    flex-grow: 1;
+    min-width: 100px;
 }
 .country-flag-name {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     margin-right: 1rem;
+    white-space: nowrap;
 }
 .country-flag {
     width: 24px;
@@ -148,7 +150,7 @@ body {
     border: 1px solid #ddd;
 }
 
-/* Carousel */
+/* Card Carousel Styling */
 .card-carousel-container {
     position: relative;
     overflow: hidden;
@@ -161,27 +163,47 @@ body {
     transition: transform 0.5s ease-in-out;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    padding-bottom: 1rem; /* Add padding for potential scrollbar */
+    justify-content: center; /* Center items when there's space */
 }
 
 .card-carousel-item {
     flex: 0 0 auto;
-    scroll-snap-align: start;
-    max-width: 320px;
-    margin: 0 1rem;
+    width: 80%; /* Default to 80% width for mobile to show one card centered */
+    max-width: 320px; /* Max width for the card itself */
+    height: 200px; /* Fixed height for consistency */
+    margin: 0 1rem; /* Spacing between cards */
     box-sizing: border-box;
+    position: relative; /* For absolute positioning of content */
+    overflow: hidden; /* Ensure content stays within bounds */
+    display: flex; /* Use flexbox for content alignment */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Space out content vertically */
+    padding: 1.5rem; /* Internal padding for content */
+    color: white; /* Default text color for cards */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
+}
+
+/* Overlay for card content to ensure readability over background images */
+.card-content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    /* Background gradient for the overlay to ensure text readability over complex card backgrounds */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%);
+    border-radius: inherit; /* Inherit border-radius from parent */
 }
 
 @media (min-width: 768px) {
     .card-carousel-item {
-        width: calc(33.333% - 2rem);
+        width: calc(33.333% - 2rem); /* Show 3 cards on desktop */
         margin: 0 1rem;
-    }
-}
-
-@media (max-width: 767px) {
-    .card-carousel-item {
-        width: 80%;
-        margin: 0 10%;
     }
 }
 
@@ -208,7 +230,6 @@ body {
     text-align: center;
     color: white; /* Text color over image */
     padding: 1rem; /* Add some padding */
-    /* Removed gap property to rely on Tailwind margins in HTML for spacing */
 }
 
 /* Add text shadow for better readability on image */
