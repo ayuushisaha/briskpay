@@ -7,60 +7,44 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
 </head>
 <body class="antialiased">
 
     <!-- Header Section -->
-    <header class="bg-gradient-to-b from-[#e0f2f7] to-white py-4">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <!-- Left Group: Logo and Personal/Business Tabs -->
-            <div class="flex items-center space-x-4">
-                <div class="text-2xl font-extrabold text-gray-900">BRISKPAY</div>
-                <div class="flex text-sm font-medium space-x-2 border border-gray-300 rounded-full p-1 bg-white shadow-sm">
-                    <button class="px-3 py-1 rounded-full bg-blue-600 text-white whitespace-nowrap">Personal</button>
-                    <button class="px-3 py-1 rounded-full text-gray-700 hover:bg-gray-100 transition duration-300 whitespace-nowrap">Business</button>
-                </div>
-            </div>
-
-            <!-- Center Group: Navigation Links -->
-            <div class="hidden lg:flex flex-grow justify-center space-x-8 text-gray-700 font-medium">
+    <header class="header-bg py-4 md:py-6">
+        <nav class="container mx-auto px-4 flex justify-between items-center">
+            <div class="text-2xl font-extrabold text-gray-800">BRISKPAY</div>
+            <div class="hidden md:flex space-x-8 text-gray-700 font-medium">
                 <a href="#" class="hover:text-blue-600 transition duration-300">Company</a>
                 <a href="#" class="hover:text-blue-600 transition duration-300">Feature</a>
                 <a href="#" class="hover:text-blue-600 transition duration-300">Career</a>
                 <a href="#" class="hover:text-blue-600 transition duration-300">News & Media</a>
             </div>
-
-            <!-- Right Group: Language Toggles and Sign In Button -->
             <div class="flex items-center space-x-4">
-                <div class="text-sm flex gap-3">
-                    <span class="text-gray-600 cursor-pointer">DE</span>
-                    <span class="text-black font-semibold cursor-pointer">EN</span>
-                </div>
-                <button class="bg-gray-900 text-white text-sm font-semibold px-4 py-2 rounded-full hover:bg-gray-700 transition duration-300">
-                    Sign In
-                </button>
+                <span class="text-gray-700 font-medium hidden sm:block">DE</span>
+                <span class="text-gray-700 font-medium hidden sm:block">EN</span>
+                <a href="#" class="px-4 py-2 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition duration-300 text-sm">Sign In</a>
             </div>
-        </div>
+        </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="header-bg py-16 md:py-24 text-center">
         <div class="container mx-auto px-4">
-            <div class="hero-image-container relative mt-12 md:mt-20 animate-fade-in" style="animation-delay: 0.6s;">
-                <img src="images/main.jpg" alt="Group of people using BriskPay" class="w-full h-auto rounded-xl shadow-xl">
-                <div class="hero-content-overlay absolute inset-0 flex flex-col justify-center items-center text-white p-4">
-                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-white animate-fade-in">
-                        Seamless Payments, <br class="md:hidden"> Limitless Possibilities.
-                    </h1>
-                    <p class="text-lg md:text-xl text-white mb-8 animate-fade-in" style="animation-delay: 0.2s;">
-                        Designed for the next generation, BriskPay makes managing your money effortless.
-                    </p>
-                    <button class="px-8 py-4 bg-gray-800 text-white rounded-full text-lg font-semibold hover:bg-gray-700 transition duration-300 animate-fade-in" style="animation-delay: 0.4s;">
-                        Get the app
-                    </button>
-                </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-800 leading-tight mb-6 animate-fade-in">
+                Seamless Payments, <br> Limitless Possibilities.
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 mb-8 animate-fade-in" style="animation-delay: 0.2s;">
+                Designed for the next generation, BriskPay makes managing your money effortless.
+            </p>
+            <button class="px-8 py-4 bg-gray-800 text-white rounded-full text-lg font-semibold hover:bg-gray-700 transition duration-300 animate-fade-in" style="animation-delay: 0.4s;">
+                Get the app
+            </button>
+            <div class="mt-12 md:mt-20">
+                <img src="images/main.jpg" alt="Group of people using BriskPay" class="mx-auto rounded-lg shadow-xl animate-fade-in" style="animation-delay: 0.6s;">
             </div>
         </div>
     </section>
@@ -99,9 +83,9 @@
             </h2>
             <div class="scroll-container flex justify-start md:justify-center py-4">
                 <!-- Feature Card 1 -->
-                <div class="feature-card bg-gray-800 text-white p-6 rounded-xl shadow-lg animate-fade-in">
+                <div class="feature-card bg-gray-800 text-white p-6 rounded-xl shadow-lg scroll-item animate-fade-in">
                     <div class="flex items-center mb-4">
-                        <img src="images/icon1.jpg" alt="User group icon" class="w-10 h-10 rounded-full mr-3 object-cover">
+                        <img src="https://placehold.co/40x40/ffffff/000?text=👤" alt="User icon" class="rounded-full mr-3">
                         <div>
                             <p class="font-semibold">No more awkward reminders</p>
                             <p class="text-sm text-gray-400">Get seamless money</p>
@@ -113,35 +97,25 @@
                     </p>
                 </div>
 
-                <!-- Feature Card 2 - Modified to match the image -->
-                <div class="feature-card relative rounded-xl shadow-lg animate-fade-in" style="animation-delay: 0.2s;">
-                    <!-- Background image for the card -->
-                    <img src="images/icon.jpg" alt="Woman with headphones" class="absolute inset-0 w-full h-full object-cover rounded-xl">
-                    
-                    <!-- Overlay content -->
-                    <div class="feature-card-content-overlay absolute inset-0 flex flex-col justify-between p-6 text-white">
-                        <!-- Top part: BRISKPAY logo -->
-                        <div class="flex items-center">
-                            <!-- SVG for a paper airplane-like icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                            </svg>
-                            <span class="text-xl font-bold">BRISKPAY</span>
-                        </div>
-                        <!-- Bottom part: Instant Payments text -->
-                        <div class="self-start"> <!-- Align text to start (left) -->
-                            <h3 class="text-2xl font-bold mb-2">Instant Payments</h3>
-                            <p class="text-sm">
-                                Need to pay a friend back? Send money instantly, with just a few taps.
-                            </p>
+                <!-- Feature Card 2 -->
+                <div class="feature-card bg-white text-gray-800 p-6 rounded-xl shadow-lg scroll-item animate-fade-in" style="animation-delay: 0.2s;">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/40x40/e0f2f7/333?text=⚡" alt="Lightning icon" class="rounded-full mr-3">
+                        <div>
+                            <p class="font-semibold">BRISKPAY</p>
+                            <p class="text-sm text-gray-600">The future of payments</p>
                         </div>
                     </div>
+                    <h3 class="text-2xl font-bold mb-3">Instant Payments</h3>
+                    <p class="text-gray-600 text-sm">
+                        Need to pay a friend back? Send money instantly, with just a few taps.
+                    </p>
                 </div>
 
                 <!-- Feature Card 3 -->
-                <div class="feature-card bg-blue-100 text-gray-800 p-6 rounded-xl shadow-lg animate-fade-in" style="animation-delay: 0.4s;">
+                <div class="feature-card bg-blue-100 text-gray-800 p-6 rounded-xl shadow-lg scroll-item animate-fade-in" style="animation-delay: 0.4s;">
                     <div class="flex items-center mb-4">
-                        <img src="images/icon3.jpg" alt="User icon" class="w-10 h-10 rounded-full mr-3 object-cover">
+                        <img src="images/icon.jpg" alt="User icon" class="w-10 h-10 rounded-full mr-3 object-cover">
                         <div>
                             <p class="font-semibold">Casandra Lee</p>
                             <p class="text-sm text-gray-600">Well done! You did a great job!</p>
@@ -292,42 +266,66 @@
 
             <div class="card-carousel-container relative">
                 <div id="cardCarousel" class="card-carousel flex justify-center items-center">
-                    <!-- Card 1 -->
-                    <div class="card-carousel-item p-6 rounded-xl shadow-lg card-gradient-gray text-white flex-shrink-0">
-                        <div class="flex justify-between items-start mb-12">
-                            <div class="text-xl font-bold">BRISKPAY</div>
-                            <img src="https://placehold.co/50x30/ffffff/000?text=VISA" alt="VISA logo" class="h-8">
-                        </div>
-                        <div class="text-left">
-                            <p class="text-lg font-semibold mb-2">**** **** **** 1234</p>
-                            <p class="text-sm">Card Holder</p>
-                            <p class="font-medium">John Doe</p>
-                        </div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="card-carousel-item p-6 rounded-xl shadow-lg card-gradient-black text-white flex-shrink-0">
-                        <div class="flex justify-between items-start mb-12">
-                            <div class="text-xl font-bold">BRISKPAY</div>
-                            <img src="https://placehold.co/50x30/ffffff/000?text=VISA" alt="VISA logo" class="h-8">
-                        </div>
-                        <div class="text-left">
-                            <p class="text-lg font-semibold mb-2">**** **** **** 5678</p>
-                            <p class="text-sm">Card Holder</p>
-                            <p class="font-medium">Jane Smith</p>
+                    <!-- Card 1: Silver Card -->
+                    <div class="card-carousel-item p-6 rounded-xl shadow-lg text-white flex-shrink-0" style="background-image: url('https://placehold.co/320x200/e0e0e0/888888/png?text=Silver+Card+Texture'); background-size: cover; background-position: center;">
+                        <div class="card-content-overlay">
+                            <div class="flex justify-between items-start w-full">
+                                <div class="text-xl font-bold">BRISKPAY</div>
+                                <!-- Contactless icon SVG -->
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22.7 11.3c-.4-.4-1-.4-1.4 0L12 20.6l-9.3-9.3c-.4-.4-1-.4-1.4 0s-.4 1 0 1.4L11.3 22.7c.4.4 1 .4 1.4 0l10-10c.4-.4.4-1 0-1.4zM2 12c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10zm10 8c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"/>
+                                </svg>
+                            </div>
+                            <div class="text-left w-full">
+                                <p class="text-lg font-semibold mb-2">**** **** **** 1234</p>
+                                <p class="text-sm">Card Holder</p>
+                                <p class="font-medium">John Doe</p>
+                            </div>
+                            <div class="flex justify-end w-full mt-auto">
+                                <img src="https://placehold.co/50x30/ffffff/000?text=VISA" alt="VISA logo" class="h-8">
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Card 3 -->
-                    <div class="card-carousel-item p-6 rounded-xl shadow-lg card-gradient-blue text-white flex-shrink-0">
-                        <div class="flex justify-between items-start mb-12">
-                            <div class="text-xl font-bold">BRISKPAY</div>
-                            <img src="https://placehold.co/50x30/ffffff/000?text=VISA" alt="VISA logo" class="h-8">
+                    <!-- Card 2: Black Card -->
+                    <div class="card-carousel-item p-6 rounded-xl shadow-lg text-white flex-shrink-0" style="background-image: url('https://placehold.co/320x200/222222/ffffff/png?text=Black+Card+Texture'); background-size: cover; background-position: center;">
+                        <div class="card-content-overlay">
+                            <div class="flex justify-between items-start w-full">
+                                <div class="text-xl font-bold">BRISKPAY</div>
+                                <!-- Contactless icon SVG -->
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22.7 11.3c-.4-.4-1-.4-1.4 0L12 20.6l-9.3-9.3c-.4-.4-1-.4-1.4 0s-.4 1 0 1.4L11.3 22.7c.4.4 1 .4 1.4 0l10-10c.4-.4.4-1 0-1.4zM2 12c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10zm10 8c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"/>
+                                </svg>
+                            </div>
+                            <div class="text-left w-full">
+                                <p class="text-lg font-semibold mb-2">**** **** **** 5678</p>
+                                <p class="text-sm">Card Holder</p>
+                                <p class="font-medium">Jane Smith</p>
+                            </div>
+                            <div class="flex justify-end w-full mt-auto">
+                                <img src="https://placehold.co/50x30/ffffff/000?text=VISA" alt="VISA logo" class="h-8">
+                            </div>
                         </div>
-                        <div class="text-left">
-                            <p class="text-lg font-semibold mb-2">**** **** **** 9012</p>
-                            <p class="text-sm">Card Holder</p>
-                            <p class="font-medium">Peter Jones</p>
+                    </div>
+
+                    <!-- Card 3: Blue Card -->
+                    <div class="card-carousel-item p-6 rounded-xl shadow-lg text-white flex-shrink-0" style="background-image: url('https://placehold.co/320x200/66b2ff/ffffff/png?text=Blue+Card+Texture'); background-size: cover; background-position: center;">
+                        <div class="card-content-overlay">
+                            <div class="flex justify-between items-start w-full">
+                                <div class="text-xl font-bold">BRISKPAY</div>
+                                <!-- Contactless icon SVG -->
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22.7 11.3c-.4-.4-1-.4-1.4 0L12 20.6l-9.3-9.3c-.4-.4-1-.4-1.4 0s-.4 1 0 1.4L11.3 22.7c.4.4 1 .4 1.4 0l10-10c.4-.4.4-1 0-1.4zM2 12c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10zm10 8c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"/>
+                                </svg>
+                            </div>
+                            <div class="text-left w-full">
+                                <p class="text-lg font-semibold mb-2">**** **** **** 9012</p>
+                                <p class="text-sm">Card Holder</p>
+                                <p class="font-medium">Peter Jones</p>
+                            </div>
+                            <div class="flex justify-end w-full mt-auto">
+                                <img src="https://placehold.co/50x30/ffffff/000?text=VISA" alt="VISA logo" class="h-8">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -379,19 +377,17 @@
                 <p class="text-sm mb-6">Designed for the next generation, BriskPay makes managing your money effortless.</p>
                 <div class="flex items-center space-x-4">
                     <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.5 7.5c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zM12 17c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5zm3.707-8.707a1 1 0 0 0-1.414 0L12 9.586l-2.293-2.293a1 1 0 0 0-1.414 1.414L10.586 11l-2.293 2.293a1 1 0 0 0 1.414 1.414L12 12.414l2.293 2.293a1 1 0 0 0 1.414-1.414L13.414 11l2.293-2.293a1 1 0 0 0 0-1.414z"/></svg>
+                        <i class="fab fa-facebook-f text-xl"></i>
                     </a>
                     <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.5 7.5c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zM12 17c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5zm3.707-8.707a1 1 0 0 0-1.414 0L12 9.586l-2.293-2.293a1 1 0 0 0-1.414 1.414L10.586 11l-2.293 2.293a1 1 0 0 0 1.414 1.414L12 12.414l2.293 2.293a1 1 0 0 0 1.414-1.414L13.414 11l2.293-2.293a1 1 0 0 0 0-1.414z"/></svg>
+                        <i class="fab fa-twitter text-xl"></i>
                     </a>
                     <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.5 7.5c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zM12 17c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5zm3.707-8.707a1 1 0 0 0-1.414 0L12 9.586l-2.293-2.293a1 1 0 0 0-1.414 1.414L10.586 11l-2.293 2.293a1 1 0 0 0 1.414 1.414L12 12.414l2.293 2.293a1 1 0 0 0 1.414-1.414L13.414 11l2.293-2.293a1 1 0 0 0 0-1.414z"/></svg>
+                        <i class="fab fa-instagram text-xl"></i>
                     </a>
                     <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.5 7.5c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zM12 17c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5zm3.707-8.707a1 1 0 0 0-1.414 0L12 9.586l-2.293-2.293a1 1 0 0 0-1.414 1.414L10.586 11l-2.293 2.293a1 1 0 0 0 1.414 1.414L12 12.414l2.293 2.293a1 1 0 0 0 1.414-1.414L13.414 11l2.293-2.293a1 1 0 0 0 0-1.414z"/></svg>
+                        <i class="fab fa-linkedin-in text-xl"></i>
                     </a>
-                    <!-- New icon3.jpg added here -->
-                    <img src="images/icon3.jpg" alt="Additional icon" class="w-8 h-8 rounded-full object-cover">
                 </div>
             </div>
 
@@ -463,7 +459,6 @@
         </div>
     </footer>
 
-    <!-- Link to external JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>
